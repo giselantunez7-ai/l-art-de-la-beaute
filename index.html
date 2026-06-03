@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Art de la Beauté | Estética y Cosmética Profesional</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        :root {
+            --dorado: #d4af37;
+            --negro: #1a1a1a;
+            --blanco: #ffffff;
+            --rosa-soft: #fdf2f2;
+            --gris-suave: #f9f9f9;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; background-color: var(--blanco); color: var(--negro); line-height: 1.8; }
+
+        nav { padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; background: var(--blanco); border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--dorado); font-size: 1.2rem; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 2.5rem; }
+        nav ul li a { text-decoration: none; color: var(--negro); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        nav ul li a:hover { color: var(--dorado); }
+
+        /* EL BANNER CON TU IMAGEN LOCAL 'banner.png' Y TEXTO PERFECTAMENTE INTEGRADO */
+        header.hero { 
+            height: 75vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            /* Se aplica un filtro oscuro suave (0.3) para despegar las letras blancas del fondo */
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('banner.png') no-repeat center center/cover;
+            padding: 0 12%; 
+            color: #ffffff; 
+            user-select: none; 
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); 
+        }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3.8rem; font-weight: 400; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .hero p { font-size: 1.15rem; font-style: italic; color: #f5f5f5; max-width: 750px; line-height: 1.6; }
+
+        .container { max-width: 1200px; margin: 4rem auto; padding: 0 5%; }
+        
+        .section-intro { text-align: center; margin-top: 6rem; margin-bottom: 3.5rem; scroll-margin-top: 120px; }
+        .section-intro h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .linea-dorada { width: 60px; height: 2px; background: var(--dorado); margin: 0 auto 2rem; }
+
+        .grid-entradas { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-bottom: 5rem; }
+        
+        .entrada { background: var(--gris-suave); padding: 2.5rem; border: 1px solid #f0f0f0; transition: all 0.4s ease; text-align: left; }
+        .entrada:hover { transform: translateY(-10px); background: var(--blanco); box-shadow: 0 20px 40px rgba(0,0,0,0.05); border-color: var(--dorado); }
+        
+        .entrada i { font-size: 2rem; color: var(--dorado); margin-bottom: 1.2rem; display: block; }
+        .entrada h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; color: var(--dorado); transition: 0.3s; }
+        .entrada p { font-size: 0.95rem; color: #666; margin-bottom: 1.5rem; }
+        
+        .btn-leer { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--negro); text-decoration: none; border-bottom: 1px solid var(--dorado); padding-bottom: 5px; transition: 0.3s; cursor: pointer; display: inline-block; }
+        .entrada:hover .btn-leer { color: var(--dorado); letter-spacing: 3px; }
+
+        .ritual-container { scroll-margin-top: 120px; margin-top: 8rem; }
+        .ritual-step { text-align: center; padding: 20px; transition: 0.3s; }
+        .ritual-step span { font-family: 'Playfair Display', serif; font-size: 3rem; color: #eee; display: block; }
+        
+        .mito-card { background: #fff; border-left: 4px solid var(--dorado); padding: 20px; margin-bottom: 20px; box-shadow: 2px 2px 10px rgba(0,0,0,0.02); }
+        .mito-card h4 { color: #cc0000; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 5px; }
+        .mito-card h5 { color: #008800; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 5px; }
+
+        .fav-card { border: 1px solid #eee; padding: 15px; text-align: center; border-radius: 10px; background: #fff; transition: 0.3s; }
+        .fav-card:hover { border-color: var(--dorado); transform: scale(1.02); }
+        .fav-tag { background: var(--rosa-soft); color: var(--dorado); font-size: 0.6rem; padding: 3px 10px; border-radius: 20px; text-transform: uppercase; }
+
+        .checklist-box { background: var(--rosa-soft); padding: 2rem; border-radius: 5px; border: 1px solid #eee; display: flex; flex-direction: column; justify-content: center; }
+        .check-item { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; font-size: 0.9rem; }
+        .check-item input { margin-right: 10px; accent-color: var(--dorado); }
+
+        .skinfood-box { display: grid; grid-template-columns: 1fr 120px; gap: 15px; background: #fff; border-left: 4px solid var(--dorado); padding: 20px; margin-bottom: 20px; box-shadow: 2px 2px 10px rgba(0,0,0,0.02); align-items: center; }
+        .skinfood-img { width: 100%; height: 90px; object-fit: cover; border-radius: 4px; }
+
+        .test-container { background: var(--negro); color: var(--blanco); padding: 4rem 5%; border-radius: 5px; text-align: center; margin: 5rem 0; scroll-margin-top: 120px; }
+        .btn-test { background: transparent; border: 1px solid var(--dorado); color: var(--dorado); padding: 12px 25px; cursor: pointer; margin: 10px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; transition: 0.3s; }
+        .btn-test:hover { background: var(--dorado); color: var(--negro); }
+        #resultado-test { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #333; display: none; }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 2000; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .modal-box {
+            background: var(--blanco);
+            padding: 3rem; max-width: 530px; width: 90%;
+            border-radius: 5px; border: 1px solid var(--dorado);
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-20px); transition: all 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+
+        .modal-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--dorado); margin-bottom: 1.5rem; }
+        .modal-box p { font-size: 0.95rem; color: #555; margin-bottom: 2rem; line-height: 1.8; text-align: justify; }
+        .btn-cerrar { background: var(--negro); color: var(--blanco); border: none; padding: 10px 25px; text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; cursor: pointer; transition: 0.3s; }
+        .btn-cerrar:hover { background: var(--dorado); color: var(--negro); }
+
+        .marcas-section { text-align: center; margin: 6rem auto 2rem; padding: 0 5%; }
+        .grid-marcas { display: flex; justify-content: center; align-items: center; gap: 3rem; flex-wrap: wrap; margin-top: 2rem; }
+        .marca-item { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: #aaa; letter-spacing: 3px; text-transform: uppercase; transition: 0.3s; }
+        .marca-item:hover { color: var(--dorado); }
+
+        footer { background: var(--negro); color: var(--blanco); padding: 4rem 5%; text-align: center; }
+        .footer-title { font-family: 'Playfair Display', serif; letter-spacing: 4px; text-transform: uppercase; font-size: 1.5rem; }
+        
+        .footer-link { color: var(--dorado); text-decoration: none; font-size: 0.8rem; font-weight: 600; margin-left: 5px; transition: 0.3s; }
+        .footer-link:hover { color: var(--blanco); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fa-solid fa-sparkles"></i> L'Art de la Beauté</div>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#skincare">Skincare</a></li>
+            <li><a href="#cosmetica">Cosmética</a></li>
+            <li><a href="#ritual">Ritual</a></li>
+            <li><a href="#analizador">Analizador</a></li>
+            <li><a href="https://www.instagram.com/gigii_gis?igsh=c2p0bHJiajNmZXU5&utm_source=qr" target="_blank">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- EL TEXTO SE QUEDA EXACTAMENTE IGUAL AQUÍ, SE VERÁ FLOTANDO SOBRE TU IMAGEN -->
+    <header class="hero">
+        <h1>Belleza con Propósito</h1>
+        <p>Un espacio dedicado a la ciencia, el lujo y el arte del cuidado personal. Bienvenidos a la guía definitiva de cosmética profesional.</p>
+    </header>
+
+    <main class="container">
+        
+        <section class="section-intro">
+            <h2>Nuestra Filosofía</h2>
+            <div class="linea-dorada"></div>
+            <p>Entendemos la cosmética como una herramienta de bienestar y salud que merece ser comprendida desde sus bases científicas y éticas.</p>
+        </section>
+
+        <section class="section-intro" id="skincare">
+            <h2>Skincare Haute Couture</h2>
+            <div class="linea-dorada"></div>
+        </section>
+
+        <section class="grid-entradas">
+            <div class="entrada">
+                <i class="fa-solid fa-droplet"></i>
+                <h3>Fundamentos Dérmicos</h3>
+                <p>La salud de la piel es la base de todo. Se define como el cuidado consciente destinado a limpiar, equilibrar y proteger las partes superficiales del cuerpo humano de los agentes externos.</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('Fundamentos Dérmicos', 'El cuidado de la piel es un pilar fundamental de la salud general. Una rutina diaria adaptada elimina impurezas celulares, mantiene los niveles óptimos de hidratación y previene patologías dérmicas severas causadas por la contaminación ambiental, el estrés oxidativo y la radiación solar.')">Leer más</a>
+            </div>
+
+            <div class="entrada">
+                <i class="fa-solid fa-arrow-up-from-water-pump"></i>
+                <h3>La Pirámide Cutánea</h3>
+                <p>El cuidado de la piel de alta gama se basa en la "Pirámide de Salud Cutánea". Los pilares fundamentales para retrasar el envejecimiento son la Protección (SPF), Renovación (Retinoides) y Activación (Péptidos).</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('La Pirámide Cutánea', 'Desarrollada por dermatólogos internacionales, esta pirámide organiza el cuidado en tres niveles esenciales: la Base (Protección total con SPF y antioxidantes), el Centro (Renovación celular profunda mediante Retinol, AHA o BHA) y la Cúspide (Activación celular avanzada con péptidos y factores de crecimiento estructural).')">Explorar</a>
+            </div>
+
+            <div class="entrada">
+                <i class="fa-solid fa-leaf"></i>
+                <h3>El Nuevo Lujo Consciente</h3>
+                <p>La <em>"Clean Beauty"</em> prioriza ingredientes de origen orgánico certificados, eliminando químicos agresivos y utilizando envases sostenibles que respetan el medio ambiente.</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('El Nuevo Lujo Consciente', 'La corriente Clean Beauty busca fórmulas limpias y transparentes libres de parabenos, sulfatos, ftalatos y siliconas. Se enfoca en la selección rigurosa de ingredientes botánicos y orgánicos certificados, fusionando el máximo lujo cosmético con el respeto absoluto al medio ambiente a través de envases ecosostenibles y reciclables.')">Filosofía Ética</a>
+            </div>
+        </section>
+
+        <section class="section-intro" id="cosmetica">
+            <h2>Cosmética y Visagismo</h2>
+            <div class="linea-dorada"></div>
+        </section>
+
+        <section class="grid-entradas">
+            <div class="entrada">
+                <i class="fa-solid fa-palette"></i>
+                <h3>Ciencia del Color</h3>
+                <p>La cosmética profesional combina pigmentos puros y tecnología dermatológica para crear bases y texturas que no solo cubren imperfecciones, sino que realzan la estructura ósea del rostro de manera armoniosa.</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('Ciencia del Color', 'Los cosméticos de última generación integran pigmentos micronizados recubiertos con aminoácidos esenciales. Esto permite que las bases de cobertura se adhieran a la piel de forma completamente homogénea sin obstruir los poros, adaptándose con precisión matemática al subtono de la piel (cálido, frío o neutro).')">Leer más</a>
+            </div>
+
+            <div class="entrada">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Texturas y Acabados</h3>
+                <p>Desde acabados mates de larga duración hasta el efecto de piel jugosa o de porcelana. Con conocer la composición de las fórmulas permite adaptar el maquillaje a las necesidades de cada biotipo cutáneo.</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('Texturas y Acabados', 'La elección del acabado (Matte, Dewy, Satinado o Velvet) depende directamente del tipo de emulsión. Pieles secas requieren fórmulas ricas en aceites ligeros e hidratantes para lograr un acabado glow, mientras que las pieles grasas demandan bases completamente libres de aceites (Oil-Free) a base de agua purificada.')">Explorar</a>
+            </div>
+
+            <div class="entrada">
+                <i class="fa-solid fa-sparkles"></i>
+                <h3>Visagismo Profesional</h3>
+                <p>El arte de estudiar las líneas, formas y volúmenes naturales del rostro. A través de técnicas avanzadas de contorno, la cosmética permite equilibrar las facciones para lograr una simetría perfecta y sofisticada.</p>
+                <a href="javascript:void(0);" class="btn-leer" onclick="abrirModal('Visagismo Profesional', 'El visagismo es el estudio profundo de las estructuras y proporciones del rostro (ovalado, cuadrado, alargado o redondo). Utilizando técnicas de claroscuro (Contouring e Highlighting), esculpimos visualmente las facciones para proyectar luces, disimular asimetrías y destacar la elegancia estructural de cada persona.')">Ver Técnicas</a>
+            </div>
+        </section>
+
+        <section id="ritual" class="ritual-container">
+            <h2 style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 3rem;">Ritual de Mañana: El Orden Correcto</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                <div class="ritual-step">
+                    <span>01</span>
+                    <h4 style="color: var(--dorado);">Limpieza</h4>
+                    <p style="font-size: 0.8rem; color: #777;">Gel limpiador suave para despertar la piel.</p>
+                </div>
+                <div class="ritual-step">
+                    <span>02</span>
+                    <h4 style="color: var(--dorado);">Sérum</h4>
+                    <p style="font-size: 0.8rem; color: #777;">Activos concentrados (Vitamina C) para iluminar.</p>
+                </div>
+                <div class="ritual-step">
+                    <span>03</span>
+                    <h4 style="color: var(--dorado);">Hidratación</h4>
+                    <p style="font-size: 0.8rem; color: #777;">Crema para sellar la humedad necesaria.</p>
+                </div>
+                <div class="ritual-step">
+                    <span>04</span>
+                    <h4 style="color: var(--dorado);">Protección</h4>
+                    <p style="font-size: 0.8rem; color: #777;">SPF 50+. El paso más importante contra el sol.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 4rem;">
+            <div class="checklist-box">
+                <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Mi Checklist Diario</h3>
+                <label class="check-item"><input type="checkbox"> Limpieza Doble</label>
+                <label class="check-item"><input type="checkbox"> Hidratación</label>
+                <label class="check-item"><input type="checkbox"> Protección Solar</label>
+            </div>
+            <div>
+                <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Skin-Food</h3>
+                <div class="skinfood-box">
+                    <div><h5>Aguacate:</h5><p style="font-size: 0.8rem; color:#666;">Grasas saludables esenciales para la flexibilidad dérmica.</p></div>
+                    <img src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?q=80&w=200&auto=format&fit=crop" class="skinfood-img" alt="Aguacate">
+                </div>
+                <div class="skinfood-box">
+                    <div><h5>Té Verde:</h5><p style="font-size: 0.8rem; color:#666;">Poderosos antioxidantes que combaten los radicales libres.</p></div>
+                    <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?q=80&w=200&auto=format&fit=crop" class="skinfood-img" alt="Té Verde">
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 6rem;">
+            <h2 style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 3rem;">Beauty Lab: Mitos vs Realidades</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="mito-card">
+                    <h4>Mito:</h4> <p>"Si mi piel es grasa, no necesito crema hidratante".</p>
+                    <h5 style="margin-top: 10px;">Realidad:</h5> <p>La falta de hidratación hace que tu piel produzca más grasa para compensar.</p>
+                </div>
+                <div class="mito-card">
+                    <h4>Mito:</h4> <p>"El bloqueador solo se usa si hay sol".</p>
+                    <h5 style="margin-top: 10px;">Realidad:</h5> <p>Los rayos UV atraviesan nubes y ventanas incluso en días nublados.</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-top: 6rem;">
+            <h2 style="font-family: 'Playfair Display', serif; text-align: center; margin-bottom: 3rem;">Favoritos del Mes</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+                <div class="fav-card">
+                    <div class="fav-tag">Trend: Glass Skin</div>
+                    <h4 style="margin-top: 15px;">Hyaluronic Complex</h4>
+                    <p style="font-size: 0.8rem; color: #888;">El secreto para una piel jugosa y ultra hidratada.</p>
+                </div>
+                <div class="fav-card">
+                    <div class="fav-tag">Must Have</div>
+                    <h4 style="margin-top: 15px;">Glow Vitamin C</h4>
+                    <p style="font-size: 0.8rem; color: #888;">Antioxidante premium para un rostro lleno de luz.</p>
+                </div>
+                <div class="fav-card">
+                    <div class="fav-tag">Night Care</div>
+                    <h4 style="margin-top: 15px;">Midnight Retinol</h4>
+                    <p style="font-size: 0.8rem; color: #888;">Renovación celular profunda mientras descansas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analizador" class="test-container">
+            <h2 style="font-family: 'Playfair Display', serif; color: var(--dorado); margin-bottom: 1.5rem;">Analizador de Piel Interactivo</h2>
+            <p style="margin-bottom: 2rem;">¿Cómo sientes tu piel la mayor parte del día?</p>
+            <button class="btn-test" onclick="analizar('Grasa')">Brillante / Oleosa</button>
+            <button class="btn-test" onclick="analizar('Seca')">Tirante / Opaca</button>
+            <button class="btn-test" onclick="analizar('Mixta')">Grasa solo en la nariz y frente</button>
+            
+            <div id="resultado-test">
+                <p id="texto-res" style="font-style: italic; font-size: 1.1rem;"></p>
+            </div>
+        </section>
+
+        <section class="marcas-section">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 0.5rem;">Marcas Aliadas</h2>
+            <div class="linea-dorada" style="margin-bottom: 2rem;"></div>
+            <div class="grid-marcas">
+                <div class="marca-item">Chanel</div>
+                <div class="marca-item">Dior</div>
+                <div class="marca-item">Lancôme</div>
+                <div class="marca-item">Shiseido</div>
+                <div class="marca-item">Estée Lauder</div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="miModal" class="modal-overlay" onclick="cerrarModalExterno(event)">
+        <div class="modal-box">
+            <h3 id="modalTitulo">Título</h3>
+            <p id="modalTexto">Contenido detallado aquí...</p>
+            <button class="btn-cerrar" onclick="cerrarModal()">Cerrar</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h2 class="footer-title">L'Art de la Beauté</h2>
+            <p style="margin-bottom: 10px; font-style: italic; color: var(--dorado);">Elegancia, Ciencia y Sofisticación.</p>
+            <p class="info-clase" style="font-size: 0.7rem; color: #777;">DISEÑO WEB I &bull; INSTITUTO GUBERNAMENTAL CHOLOMA &bull; 2026</p>
+            
+            <p style="font-size: 0.7rem; color: #555; margin-top: 5px; text-transform: uppercase;">
+                GÉNESIS INTERIANO 
+                <a href="https://www.instagram.com/gigii_gis?igsh=c2p0bHJiajNmZXU5&utm_source=qr" target="_blank" class="footer-link" title="Sígueme en Instagram">
+                    <i class="fa-brands fa-instagram"></i> @gigii_gis
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function analizar(tipo) {
+            const resDiv = document.getElementById('resultado-test');
+            const resTexto = document.getElementById('texto-res');
+            resDiv.style.display = 'block';
+            if(tipo === 'Grasa') resTexto.innerHTML = "Tu piel es tendencia <strong>Grasa</strong>. Recomendamos texturas en gel y limpieza profunda.";
+            if(tipo === 'Seca') resTexto.innerHTML = "Tu piel es tendencia <strong>Seca</strong>. Necesitas cremas ricas y aceites nutritivos.";
+            if(tipo === 'Mixta') resTexto.innerHTML = "Tu piel es <strong>Mixta</strong>. Usa productos equilibrantes y ligeros.";
+            resDiv.scrollIntoView({behavior: 'smooth'});
+        }
+
+        function abrirModal(titulo, texto) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalTexto').innerText = texto;
+            document.getElementById('miModal').classList.add('active');
+        }
+
+        function cerrarModal() {
+            document.getElementById('miModal').classList.remove('active');
+        }
+
+        function cerrarModalExterno(e) {
+            if (e.target.id === "miModal") {
+                cerrarModal();
+            }
+        }
+    </script>
+
+</body>
+</html>
